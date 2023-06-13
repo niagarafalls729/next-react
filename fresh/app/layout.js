@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import './globals.css'
 import { Inter } from 'next/font/google'
 
@@ -10,8 +11,19 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="utf-8">
+      <body className={inter.className}>
+        <div className="navbar">
+          <Link href="/">home</Link>
+          <Link href="/list">list페이지</Link>
+          <Link href="/cart">결제페이지</Link>
+        </div>
+        {children}
+      </body>
     </html>
   )
 }
+
+// page.js 보여줄때
+// 1. 해당 page.js 폴더에 layout.js 있으면 그걸로 page를 감싸는식
+// 2. 상위는 올라갈수록 한번씩 더 Layout.js 를 적용함

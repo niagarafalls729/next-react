@@ -1,8 +1,20 @@
-export default function Layout({ children }) {
+// layout.js
+import React from 'react';
+
+const Layout = ({ children }) => {
   return (
     <div>
-      <p>현대카드 무이자이벤트중</p>
-      {children}
+      {/* Your common header */}
+      <header>
+        <h1>My Shopping Cart</h1>
+      </header>
+      <main>{children}</main>
+      {/* Your common footer */}
+      <footer>
+        <p>&copy; 2023 My Store</p>
+      </footer>
     </div>
-  )
-} 
+  );
+};
+
+export default Layout;

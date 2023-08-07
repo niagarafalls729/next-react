@@ -1,7 +1,10 @@
+'use client';
+
 import './globals.css'
 import Navigation from "./components/navigation";
-
-import { Inter } from 'next/font/google'
+import Footer from "./components/footer";
+import { Inter } from 'next/font/google' 
+import MobileComponent from "./display/responsiveDisplay"; // 수정: MobileComponent로 변경
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -11,12 +14,24 @@ export const metadata = {
 }
 
 export default function RootLayout({ children }) {
+  // const mobile = MobileComponent(); // MobileComponent를 함수로 호출하여 반환된 mobile 값을 사용
+
   return (
     <html>
-      <body className={inter.className}>
-        <Navigation />
-        {children}
-        
+      <body suppressHydrationWarning={true} className={inter.className}>
+      <div> 
+        {MobileComponent() ? (
+          <>
+            <h1>dddddddddddddddddddddddd</h1>
+          </>
+        ) : (
+          <>
+            <Navigation />
+            {children}
+            <Footer />
+          </>
+        )}
+      </div>
       </body>
     </html>
   )

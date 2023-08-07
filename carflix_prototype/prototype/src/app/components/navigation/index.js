@@ -9,6 +9,7 @@ const Navigation = () => {
   const [showNavbar, setShowNavbar] = useState(false)
 
   const handleShowNavbar = () => {
+    console.log("showNavbar:::",showNavbar)
     setShowNavbar(!showNavbar)
   }
   return (
@@ -16,7 +17,13 @@ const Navigation = () => {
       <div className="container">
         <div className="logo">
           <Link href="/">
-          <Image src="/logo.png"  width="120" height="50" alt="logo"/>
+          <Image
+            alt="logo"
+            height="50"
+            width="100"
+            priority // or priority={true}
+            src="/logo.png"
+          />
           </Link>
         </div>
         <div className="menu-icon" onClick={handleShowNavbar}>

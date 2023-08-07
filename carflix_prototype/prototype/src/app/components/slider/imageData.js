@@ -1,5 +1,3 @@
-
-
 const imageData = [
     {
       label: "Image 1",

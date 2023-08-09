@@ -1,9 +1,9 @@
 
 import { MongoClient } from "mongodb"
-import { connectDB } from "./util/database"
+import { connectDB } from "../util/database"
 import Link from "next/link";
-import DetailLink from "./list/DetailLink";
-import Write from "./write/page";
+import DetailLink from "../list/DetailLink";
+import Write from "../write/page";
 export default async function Home() {
 
   const client = await connectDB;
@@ -18,9 +18,14 @@ export default async function Home() {
 
           
           <div className="list-item" key={y}>
+            <div className="between">
             <Link href={'detail/'+result[y]._id.toString()}>
-              <h4>{result[y].title}</h4>
+              <span>{result[y].title}</span>
             </Link>
+            <Link href={'modi/'+result[y]._id.toString()}>
+              <button className="redBtn" style={{textAlign:'right'}}>수정 </button>
+            </Link>
+            </div>
             <DetailLink/>
             {/* <p>{result[y].content}</p> */}
           </div>

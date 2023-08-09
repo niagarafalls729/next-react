@@ -4,10 +4,8 @@ import { connectDB } from "../../util/database"
 import DetailLink from "@/app/list/DetailLink";
 
 const Detail = async (porps) =>{
-
-
-    const detailIDX = porps.params.index;
-    console.log("detailIDX",detailIDX)
+ 
+    const detailIDX = porps.params.index; 
     const client = await connectDB;
     const db  = client.db('forum') 
     let result = await db.collection('post').find({ _id: new ObjectId(detailIDX)}).toArray()

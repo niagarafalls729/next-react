@@ -7,8 +7,8 @@ export default function DetailLink(){
     let router = useRouter();
     let pathName = usePathname();
     let queryString = useSearchParams();
-    console.log("pathName",pathName)
-    console.log("queryString",queryString)
+    // console.log("pathName",pathName)
+    // console.log("queryString",queryString)
     return (
         <div>
             <button onClick={()=>{ router.push('/')}}>버튼</button>

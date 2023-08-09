@@ -17,4 +17,29 @@
   .list-item p {
     color: grey;
     margin : 5px 0px;
+  }  
+  
+   
+  
+  .p-20 {
+    padding: 20px;
+  }
+  input {
+    box-sizing: border-box;
+    padding: 5px;
+    display: block;
+    margin-bottom: 5px;
+  }
+  button {
+    padding: 5px 5px;
+    background: lightgray;
+    border: none;
+    border-radius: 5px;
   } 
+  .between{
+    display: flex;
+    justify-content: space-between;
+  }
+  .redBtn{
+    background : green;
+  }

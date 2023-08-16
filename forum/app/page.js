@@ -14,18 +14,7 @@ export default async function Home() {
   // console.log("ddd",result[0].title)
     return (
       <div className="list-bg">
-        { result.map((x,y)=>
-
-          
-          <div className="list-item" key={y}>
-            <Link href={'detail/'+result[y]._id.toString()}>
-              <h4>{result[y].title}</h4>
-            </Link>
-            <DetailLink/>
-            {/* <p>{result[y].content}</p> */}
-          </div>
-        ) }
-      <Link href={'write/'}>글쓰러가기</Link>
+      <Link href={'list/'}>목록보러가기</Link>
       </div>
     )
 }

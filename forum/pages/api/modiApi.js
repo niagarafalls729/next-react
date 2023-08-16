@@ -23,7 +23,7 @@ export default async function modi(req,res){
                 { $set: arr }
             ); 
             console.log("arrrr", arr); 
-            res.writeHead(302, { Location: '/' }).end()
+            res.writeHead(302, { Location: '/list' }).end()
             // res.status(302).redirect('/')     
         } catch (error) {
             console.error("POST Error:", error);

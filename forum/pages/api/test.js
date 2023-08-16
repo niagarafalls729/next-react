@@ -10,7 +10,8 @@ export default async function handler(요청,응답){
         try {
             let arr = 요청.body
             db.collection('post').insertOne(arr)
-            return 응답.status(200).redirect('/list')    
+            응답.writeHead(302, { Location: '/list' }).end()
+            return 응답.status(200).redirect('/list')        
         } catch (error) {
             return 응답.status(400).redirect('/list')    
         }
